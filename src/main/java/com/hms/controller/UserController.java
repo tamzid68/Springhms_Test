@@ -11,8 +11,10 @@ public class UserController {
     UserService userService;
     @PostMapping(value = "/user")
     public User saveUser(@RequestBody User user){
+
         return userService.saveUser(user);
     }
+
 //    @PostMapping(value = "/user")
 //    public String saveUser(@RequestParam String name, @RequestParam String address){
 //        User object = new User();
