@@ -1,11 +1,10 @@
-package com.hms.controller;
+package com.hms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.lang.reflect.InvocationTargetException;
-
 @SpringBootApplication
+
 public class SpringHmsApplication {
 
 	public static void main(String[] args) {
