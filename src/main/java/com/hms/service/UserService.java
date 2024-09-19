@@ -1,16 +1,22 @@
 package com.hms.service;
 
 import com.hms.model.User;
-import com.hms.repository.UserRepo;
+import com.hms.repository.UserJPARepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
+public class UserService implements UserServiceIf {
 @Autowired
-    UserRepo userRepo;
-    public User saveUser(User user) {
+UserJPARepo userRepo;
+@Override
+public User saveUser(User user) {
 
         return userRepo.save(user);
+    }
+
+    @Override
+    public User findById(long id) {
+        return userRepo.findById(id).get();
     }
 }
