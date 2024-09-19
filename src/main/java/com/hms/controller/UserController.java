@@ -1,14 +1,14 @@
 package com.hms.controller;
 
 import com.hms.model.User;
-import com.hms.service.UserService;
+import com.hms.service.UserServiceIf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
     @Autowired
-    UserService userService;
+    private UserServiceIf userService;
     @PostMapping(value = "/user")
     public User saveUser(@RequestBody User user){
 
@@ -28,7 +28,11 @@ public class UserController {
     public String root(){
         return "Hi Tamzid!!";
     }
+@GetMapping(value = "/user/{id}")
+    public User finebyid(@PathVariable ("id") long id){
+        return userService.findById(id);
 
+}
 
 
 }
