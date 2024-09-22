@@ -1,22 +1,20 @@
 /*
 package com.hms.controller;
 
+import com.hms.model.Student;
+import com.hms.service.studentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
 @RestController
 public class RootController {
-    @RequestMapping(value = "/hi",method = RequestMethod.GET)
+@Autowired
+studentService studentService;
 
-    public String rootMap(){
-
-        return "Tamzid!";
-    }
-
-    @GetMapping(value = "/")
-    public String root(){
-
-        return "hello!!";
-    }
+@PostMapping(value = "/student")
+    public Student add_student(Student student){
+    return studentService.saveStudent(student);
+}
 }
 */
