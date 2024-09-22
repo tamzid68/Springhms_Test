@@ -9,15 +9,15 @@ import java.util.List;
 
 @Service
 public class UserService implements UserServiceIf {
-@Autowired
-UserJPARepo userRepo;
+    @Autowired
+    UserJPARepo userRepo;
 
     public List<User> getUserAll() {
         return userRepo.findAll();
     }
 
     @Override
-public User saveUser(User user) {
+    public User saveUser(User user) {
 
         return userRepo.save(user);
     }
@@ -36,8 +36,7 @@ public User saveUser(User user) {
     }
 
     @Override
-    public  void deleteById(long id)
-    {
+    public void deleteById(long id) {
         userRepo.deleteById(id);
     }
 }
