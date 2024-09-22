@@ -9,5 +9,10 @@ public interface UserServiceIf {
     User saveUser(User user);
 
     User findById(long id);
+
     public List<User> getUserAll();
+
+    User updateById(long id, User userInfo);
+
+    void deleteById(long id);
 }

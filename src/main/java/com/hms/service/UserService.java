@@ -26,4 +26,18 @@ public User saveUser(User user) {
     public User findById(long id) {
         return userRepo.findById(id).get();
     }
+
+    @Override
+    public User updateById(long id, User userInfo) {
+        User user = userRepo.findById(id).orElseThrow();
+        user.setName(userInfo.getName());
+        user.setAddress(userInfo.getAddress());
+        return userRepo.save(user);
+    }
+
+    @Override
+    public  void deleteById(long id)
+    {
+        userRepo.deleteById(id);
+    }
 }
