@@ -28,16 +28,21 @@ public class UserController {
 //    }
 
  @GetMapping(value = "/")
-    public String root(){
+ public String root(){
         return "Hi Tamzid!!";
     }
+
 @GetMapping(value = "/user/{id}")
-    public User finebyid(@PathVariable ("id") long id){
-        return userService.findById(id);
-}
+    public User finebyid(@PathVariable ("id") long id)  { return userService.findById(id); }
+
 @GetMapping(value = "/show_all")
-    public List<User> getAllUser(){
-        return userService.getUserAll();
-}
+    public List<User> getAllUser()  { return userService.getUserAll(); }
+
+
+@PutMapping (value = "/update/{id}")
+public User updateById(@PathVariable long id, @RequestBody User userInfo)   { return userService.updateById(id ,userInfo); }
+
+@DeleteMapping(value = "/delete/{id}")
+public void deleteById(@PathVariable long id)   { userService.deleteById(id); }
 
 }
