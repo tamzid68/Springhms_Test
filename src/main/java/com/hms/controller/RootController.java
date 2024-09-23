@@ -1,4 +1,3 @@
-/*
 package com.hms.controller;
 
 import com.hms.model.Student;
@@ -9,12 +8,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class RootController {
-@Autowired
-studentService studentService;
 
-@PostMapping(value = "/student")
-    public Student add_student(Student student){
-    return studentService.saveStudent(student);
+    @GetMapping(value = "/")
+    public String root() {
+        return "home";
+    }
+
+
 }
-}
-*/
