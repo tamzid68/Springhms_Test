@@ -27,11 +27,6 @@ public class UserController {
 //        return "Saved";
 //    }
 
-    @GetMapping(value = "/")
-    public String root() {
-        return "Hi Tamzid!!";
-    }
-
     @GetMapping(value = "/user/{id}")
     public User finebyid(@PathVariable("id") long id) {
         return userService.findById(id);
